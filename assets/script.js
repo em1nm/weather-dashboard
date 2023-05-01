@@ -27,4 +27,22 @@ $.each(oldSearches, function (i, value) {
     searchHistoryId.append(newBtn);
 });
 
+// search-history container
+searchHistoryId.on('click', '.historyBtn', function () {
+    $('#city').text($(this).val());
+    removeForecast();
+});
+
+// Create a clear history 
+const clearHistory = $('<input type="button" class="btn btn-danger col-12 mb-2" id="clearHistory" />');
+clearHistory.val('Clear History');
+$('#historyFooter').append(clearHistory);
+
+$('#clearHistory').click(function () {
+    // Clear local storage
+    localStorage.removeItem('oldSearches');
+
+    // Remove history button
+    $('.historyBtn').remove();
+});
 
