@@ -12,7 +12,7 @@ $('#searchBtn').click(function () {
     oldSearches.push($('#location').val());
     // Changes array into a string
     let oldSearchesStr = JSON.stringify(oldSearches);
-    // Store the string in local storage
+    // Stores the string in local storage
     localStorage.setItem('oldSearches', oldSearchesStr);
     const newBtn = $('<input type="button" class="btn btn-light col-12 mb-2 historyBtn" />').val($('#location').val());
     searchHistoryId.append(newBtn);
@@ -20,5 +20,7 @@ $('#searchBtn').click(function () {
     dailyWeather();
     forecast();
 });
+
+
 
 
