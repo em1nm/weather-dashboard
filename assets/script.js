@@ -21,6 +21,10 @@ $('#searchBtn').click(function () {
     forecast();
 });
 
-
+// create buttons based on what's stored
+$.each(oldSearches, function (i, value) {
+    const newBtn = $('<input type="button" class="btn btn-light col-12 mb-2 historyBtn" />').val(value);
+    searchHistoryId.append(newBtn);
+});
 
 
