@@ -10,3 +10,55 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
+
+<body>
+    <header class="text-bg-primary text-center">
+        <h1 class="p-3">Weather Dashboard</h1>
+    </header>
+    <div class="container mx-auto row">
+        <div class="card mx-0 col-sm-12 col-lg-3">
+            <label for="location" class="form-label card-header">
+                <h2>Search for a city:</h2>
+            </label>
+            <input class="form-control mb-3 mt-3 p-2" type="search" name="location" id="location"
+                placeholder="Ex: Los Angeles">
+            <input type="button" class="btn btn-primary p-2 mb-3" id="searchBtn" value="Search">
+            <div class="card-body" id="search-history">
+                <!-- Search History Goes Here -->
+            </div>
+            <div class="card-footer" id="historyFooter"></div>
+        </div>
+        <div class="col-9">
+            <h2 class="card" id="dailyWeatherHead">
+                <div class="card-header">
+                    <span id="city">[City Name]</span>
+                    <span id="currentDate">Date</span>
+                </div>
+            </h2>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="weatherIcon"></li>
+                    <li class="list-group-item" id="dailyTemp">Temp:</li>
+
+                    <li class="list-group-item" id="dailyWind">Wind:</li>
+                    <li class="list-group-item" id="dailyHumidity">Humidity:</li>
+                </ul>
+                <div class="container row">
+                    <div class="card-header mt-2">
+                        <h3>5 Day Forecast</h3>
+                    </div>
+                    <div class="card-body row" id="5day">
+                        <!-- 5 day forecast cards inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- JS Scripts below -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
+</body>
+
+</html>
