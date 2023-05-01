@@ -10,9 +10,9 @@ let searchHistoryId = $('#search-history');
 $('#searchBtn').click(function () {
     // Push the value of location 
     prevSearches.push($('#location').val());
-    // Changes array into a string
+    // Change array into a string
     let oldSearchesStr = JSON.stringify(prevSearches);
-    // Stores the string in local storage
+    // Store the string in local storage
     localStorage.setItem('prevSearches', oldSearchesStr);
     const newBtn = $('<input type="button" class="btn btn-light col-12 mb-2 historyBtn" />').val($('#location').val());
     searchHistoryId.append(newBtn);
@@ -72,7 +72,7 @@ function dailyWeather() {
             $('#dailyTemp').text(`Temp: ${data.main.temp} F`);
             $('#dailyWind').text(`Wind: ${data.wind.speed} Mph`);
             $('#dailyHumidity').text(`Humidity: ${data.main.humidity}%`);
-            // Removes previous icons 
+            // Remove previous icons 
             $('#weatherIcon').empty();
 
             const weatherIcon = $(`<img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">`)
@@ -92,7 +92,7 @@ function forecast() {
                 const header = $('<div class="card-header"></div>').text(`${dayjs().add(i, 'day').format("MM-DD-YYYY")}`);
                 // Create card body
                 const body = $('<div class="card-body"></div>');
-                // Create list group
+                // Create group
                 const li = $('<ul class="list-group list-group-flush"></ul>');
                 // Add list items with IDs
                 const weatherIcon = $(`<li class="list-group-item" id="forecastIcon${i}"><img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png"></li>`)
@@ -100,13 +100,13 @@ function forecast() {
                 let temp = $(`<li class="list-group-item" id="temp${i}"></li>`).text(data.list[i].main.temp + " F");
                 let wind = $(`<li class="list-group-item" id="wind${i}"></li>`).text(data.list[i].wind.speed + " Mph");
                 let humidity = $(`<li class="list-group-item" id="humidity${i}"></li>`).text(data.list[i].main.humidity + " %");
-                // Append list items to list group
+                // add list items to list group
                 li.append(weatherIcon, temp, wind, humidity);
-                // Append list group to card body
+                // add list group to card body
                 body.append(li);
-                // Append header and body to card
+                // add header and body to card
                 card.append(header, body);
-                // Append card to target element
+                // add card to target element
                 $('#5day').append(card);
 
             }
